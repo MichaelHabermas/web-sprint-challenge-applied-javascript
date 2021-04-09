@@ -26,9 +26,20 @@ const Tabs = topics => {
 		div.classList.add('tab');
 		div.textContent = topic;
 
-		// gives each tab an event listener to filter the articles. NOT FINISHED
-		div.addEventListener('click', () => {
-			console.log(topic + ' is the tab');
+		// gives each tab an event listener to filter the articles. MOSTLY Finished
+		div.addEventListener('click', e => {
+			let currentCards = document.querySelectorAll('.cards-container .card');
+			currentCards.forEach(card => {
+				card.classList.add('cardHide');
+				card.classList.remove('cardShow');
+				// console.log(card);
+				// need something i can check the card against to see if matches the tab
+				if (card.classList.value.includes(topic)) {
+					card.classList.remove('cardHide');
+					// console.log(card);
+					card.classList.add('cardShow');
+				}
+			});
 		});
 
 		divTopics.appendChild(div);

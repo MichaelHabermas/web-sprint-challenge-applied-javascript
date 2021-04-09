@@ -79,7 +79,13 @@ const cardAppender = selector => {
 
 				// loop over all the article objects in each topic and post to the Newsletter
 				topicsCategory.forEach(article => {
-					document.querySelector(selector).appendChild(Card(article));
+					let newCard = Card(article);
+
+					// adding a classname that is === to the key for filtering purposes in tabs.js
+					newCard.classList.add(`${key}`);
+					console.log(`${key}`);
+
+					document.querySelector(selector).appendChild(newCard); // add the card to the webpage
 				});
 			});
 		})
