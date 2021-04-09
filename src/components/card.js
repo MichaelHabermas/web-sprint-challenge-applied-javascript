@@ -81,7 +81,7 @@ const cardAppender = selector => {
 				topicsCategory.forEach(article => {
 					let newCard = Card(article);
 
-					// adding a classname that is === to the key for filtering purposes in tabs.js
+					// adding a classname that is == to the key for filtering purposes in tabs.js
 					newCard.classList.add(`${key}`);
 
 					document.querySelector(selector).appendChild(newCard); // add the card to the webpage

@@ -27,7 +27,7 @@ const Tabs = topics => {
 		div.textContent = topic;
 
 		// gives each tab an event listener to filter the articles.
-		div.addEventListener('click', e => {
+		div.addEventListener('click', () => {
 			let currentCards = document.querySelectorAll('.cards-container .card');
 			currentCards.forEach(card => {
 				//hides all the cards in prep for The Great Filtering below
