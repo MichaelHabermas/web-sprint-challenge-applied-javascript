@@ -277,7 +277,3 @@ body {
 .cardHide {
 	display: none !important;
 }
-
-.cardShow {
-	display: flex;
-}

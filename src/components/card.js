@@ -83,7 +83,6 @@ const cardAppender = selector => {
 
 					// adding a classname that is === to the key for filtering purposes in tabs.js
 					newCard.classList.add(`${key}`);
-					console.log(`${key}`);
 
 					document.querySelector(selector).appendChild(newCard); // add the card to the webpage
 				});

@@ -43,7 +43,8 @@ const headerAppender = selector => {
 	// It should create a header using the Header component above, passing arguments of your choosing.
 	// It should append the header to the element in the DOM that matches the given selector.
 	//
-	// creates and appends the header, but isnt reuseable for anything except this One header? I think that's what's wanted, but I dont like it. But it works. Sew buttons.
+
+	// creates and appends the header, but isn't reuseable for anything except this One Header?? I think that's what's wanted, but I don't like it. But it works. Sew buttons.
 	document.querySelector(selector).appendChild(Header('Lambda Times', 'January 6, 2021', '26°'));
 };
 

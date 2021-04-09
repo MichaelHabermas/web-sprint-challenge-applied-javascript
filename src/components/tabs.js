@@ -26,18 +26,19 @@ const Tabs = topics => {
 		div.classList.add('tab');
 		div.textContent = topic;
 
-		// gives each tab an event listener to filter the articles. MOSTLY Finished
+		// gives each tab an event listener to filter the articles.
 		div.addEventListener('click', e => {
 			let currentCards = document.querySelectorAll('.cards-container .card');
 			currentCards.forEach(card => {
+				//hides all the cards in prep for The Great Filtering below
 				card.classList.add('cardHide');
-				card.classList.remove('cardShow');
-				// console.log(card);
-				// need something i can check the card against to see if matches the tab
-				if (card.classList.value.includes(topic)) {
+
+				// this fixes the node.js filter bug
+				let valueCheck = topic.split('.')[0];
+
+				// this adds and remove a class for filtering/display purposes
+				if (card.classList.value.includes(valueCheck)) {
 					card.classList.remove('cardHide');
-					// console.log(card);
-					card.classList.add('cardShow');
 				}
 			});
 		});
