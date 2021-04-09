@@ -25,6 +25,12 @@ const Tabs = topics => {
 		let div = document.createElement('div');
 		div.classList.add('tab');
 		div.textContent = topic;
+
+		// gives each tab an event listener to filter the articles. NOT FINISHED
+		div.addEventListener('click', () => {
+			console.log(topic + ' is the tab');
+		});
+
 		divTopics.appendChild(div);
 	});
 

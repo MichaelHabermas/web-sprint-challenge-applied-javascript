@@ -48,6 +48,11 @@ const Card = article => {
 	divAuthor.appendChild(spanName);
 	divImgContainer.appendChild(imgProfilePic);
 
+	// event listener to log the article's headline
+	divCard.addEventListener('click', () => {
+		console.log(article.headline);
+	});
+
 	// deliver the grand-daddy-o of all divs
 	return divCard;
 };
@@ -65,10 +70,14 @@ const cardAppender = selector => {
 	axios
 		.get(`https://lambda-times-api.herokuapp.com/articles`)
 		.then(futureData => {
-			console.log(futureData);
+			// get an array of all the different article topics as a array
 			let dataKeys = Object.keys(futureData.data.articles);
+
+			//loop over that topics/keys array to get at all the articles in each
 			dataKeys.forEach(key => {
 				let topicsCategory = futureData.data.articles[`${key}`];
+
+				// loop over all the article objects in each topic and post to the Newsletter
 				topicsCategory.forEach(article => {
 					document.querySelector(selector).appendChild(Card(article));
 				});
